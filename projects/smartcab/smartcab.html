@@ -13197,11 +13197,10 @@ As we are actually not learning anything and taking random actions , it makes no
 <li>light (red, green)- 2</li>
 <li>oncoming – (left, right, forward, None) : 4</li>
 <li>left – (left, right, forward, None) : 4</li>
-<li>possible action – (left, right, forward, None) : 4</li>
 </ul>
 </li>
 </ul>
-<p>Total states = 3 x 2 x 4 x 4 x 4 = 384 states.</p>
+<p>Total states = 3 x 2 x 4 x 4 = 96 sttes.</p>
 <p>We would need a good number of trails to learn effectively. With the 20 training trials the smartcab will improve a bit but we will not have policy for each state. If we have a higher number of training trials it can probably learn policy for each state.</p>
 
 </div>
@@ -16480,15 +16479,15 @@ Examples of optimal policies with respect to US traffic rules would be as follow
 </code></pre>
 <p>Similar example to Eg2. It has correctly identified it is safe to move now that the light is green. It demonstrates the optimal policy.
 the policy identified by the Q-Learner is the correct one for a specific action.</p>
-<p>Eg. 4: ('left', 'green', 'right', 'forward')</p>
+<p>Eg. 4: ('forward', 'green', 'forward', 'forward')</p>
 
-<pre><code>-  forward : 0.08
--  left : -2.86
--  right : 0.00
+<pre><code>-  forward : 0.00
+-  left : -3.06
+-  right : 0.93
 -  None : 0.00
 
 </code></pre>
-<p>In this state, the agent would go forward instead of turn left as that is higher value, even though left is the waypoint to the destination in the environment. This means the final Q-Learning agent is not as efficient as it could be. This may be the reason that efficiency is A instead of A+ rating for reliability.</p>
+<p>In this state, the agent would go right instead of forward as that is higher value, even though forward is the waypoint to the destination in the environment. This means the final Q-Learning agent is not as efficient as it could be. This may be the reason that efficiency is A instead of A+ rating for reliability.</p>
 
 </div>
 </div>
